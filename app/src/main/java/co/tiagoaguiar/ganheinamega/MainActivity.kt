@@ -1,5 +1,7 @@
 package co.tiagoaguiar.ganheinamega
 
+import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -8,10 +10,18 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import java.util.Random
 
+
+
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var prefs: SharedPreferences
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         setContentView(R.layout.activity_main)
+
+        prefs = getSharedPreferences("db", Context.MODE_PRIVATE)
 
         val editText: EditText = findViewById(R.id.edt_number)
         val txtResult: TextView = findViewById(R.id.txt_result)
