@@ -18,14 +18,17 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         setContentView(R.layout.activity_main)
-
-        prefs = getSharedPreferences("db", Context.MODE_PRIVATE)
 
         val editText: EditText = findViewById(R.id.edt_number)
         val txtResult: TextView = findViewById(R.id.txt_result)
         val btnGenerator: Button = findViewById(R.id.btn_generate)
+
+        prefs = getSharedPreferences("db", Context.MODE_PRIVATE)
+        val result = prefs.getString("resultId", null)
+        if (result != null){
+            txtResult.text = "Ultima aposta: $result"
+        }
 
         btnGenerator.setOnClickListener {
             val text = editText.text.toString()
@@ -61,5 +64,9 @@ class MainActivity : AppCompatActivity() {
             }
         }
         textResult.text = listNumber.joinToString(" - ")
+
+        val editor = prefs.edit()
+        editor.putString("resultId", textResult.text.toString())
+        editor.apply()
     }
 }
