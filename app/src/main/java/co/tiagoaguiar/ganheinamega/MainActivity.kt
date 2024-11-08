@@ -26,8 +26,10 @@ class MainActivity : AppCompatActivity() {
 
         prefs = getSharedPreferences("db", Context.MODE_PRIVATE)
         val result = prefs.getString("resultId", null)
-        if (result != null){
-            txtResult.text = "Ultima aposta: $result"
+
+        // Utilizado para validar se um dados está nulo
+        result?.let {
+            txtResult.text = "Ultima aposta: $it"
         }
 
         btnGenerator.setOnClickListener {
