@@ -40,7 +40,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun numberGenerator(text: String, textResult: TextView) {
         if (text.isEmpty()) {
-            Toast.makeText(this, "Não é permitido campo vazio", Toast.LENGTH_LONG).show()
+            Toast.makeText(this, "Não é permitido campo vazio", Toast.LENGTH_SHORT).show()
             return
         }
 
@@ -49,7 +49,7 @@ class MainActivity : AppCompatActivity() {
             Toast.makeText(
                 this,
                 "Valor não permitido. Informe um número entre 6 e 15!!",
-                Toast.LENGTH_LONG
+                Toast.LENGTH_SHORT
             ).show()
             return
         }

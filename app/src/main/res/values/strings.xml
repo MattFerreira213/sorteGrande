@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Sorte Grande</string>
     <string name="tittle">Tente a sorte e fique milionario!!!</string>
-    <string name="number_hint">Digite quantos numeros deseja jogar</string>
-    <string name="number_generator">Gerar Números</string>
+    <string name="number_hint">Quantos numeros deseja jogar?</string>
+    <string name="number_generator">Gerar Jogo</string>
 </resources>
